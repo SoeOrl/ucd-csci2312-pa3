@@ -12,13 +12,13 @@ namespace Clustering {
 		__dimensionality = dim;
 
 		__k = k;
-		if (__k == 0 || !fStream.good() || __iFileName == "")
+		if (__k == 0)
 		{
 			throw ZeroClustersEx();
-			if (!fStream.good() || __iFileName == "")
-			{
+		}
+		if (!fStream.good() || __iFileName == "")
+		{
 				throw DataFileOpenEx(__iFileName);
-			}
 		}
 
 		__clusters = new Cluster*[__k];
